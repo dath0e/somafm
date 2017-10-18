@@ -2,11 +2,6 @@
 
 
 function depend {
-	curl -V &> /dev/null 
-	if [ $? -ne 0 ]
-	then
-		fatal "Curl is not installed."
-	fi
 	cvlc --version &> /dev/null
 	if [ $? -ne 0 ]
 	then
