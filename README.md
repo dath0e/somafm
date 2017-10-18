@@ -1,12 +1,10 @@
 # somafm
-Simple cli for soma fm written in bash.
+Simple cli for <a href="http://http://somafm.com/">soma fm</a> written in bash.
 
 Requires cvlc and curl.
-By default plays 128k AAC, you can easily change.
-Saves the scraped channels in channels.soma
+By default plays 128k AAC, but you can easily change it. 
+<br>Saves the scraped channels in channels.soma
  
 Would be nice to add...
-
--> Channel info
-
--> Channel error check
+<br> -> Channel info
+<br> -> Channel error check
