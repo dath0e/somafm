@@ -1,5 +1,5 @@
 # somafm
-Simple cli for <a href="http://http://somafm.com/">soma fm</a> written in bash.
+Minimal cli for <a href="http://http://somafm.com/">soma fm</a> written in bash.
 
 Requires cvlc and curl.
 By default plays 128k AAC, but you can easily change this. 
