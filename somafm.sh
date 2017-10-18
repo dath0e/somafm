@@ -60,7 +60,7 @@ function check {
 
 	if [ ! -e `pwd`/channels.soma ]
 	then
-		echo "[!] Channel list not available."
+		echo "[!] Channel list is not available."
 		echo "[+] Getting the channel list..."
 		getChan
 	fi
