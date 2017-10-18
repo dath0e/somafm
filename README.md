@@ -8,4 +8,5 @@ Saves the scraped channels in channels.soma
 Would be nice to add...
 
 -> Channel info
+
 -> Channel error check
