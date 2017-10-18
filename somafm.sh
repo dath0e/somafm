@@ -1,5 +1,11 @@
 #!/bin/sh
 
+if [ ! -z `readlink $0` ]
+then
+	dir=`dirname $(readlink -f $0)`
+else
+	dir=`dirname $0`
+fi
 
 function depend {
 	cvlc --version &> /dev/null
@@ -18,7 +24,7 @@ function banner {
 	echo " ____|_/ \_|__|_/ |_| |_| |_| |_|  |_|   |_|     |_| |_| |_|"
 	echo "#############################################################"
 	echo
-	echo "[+] Channel list last modified "`stat channels.soma | grep "Modify" | awk '{print $2}'`
+	echo "[+] Channel list last modified "`stat $dir/channels.soma | grep "Modify" | awk '{print $2}'`
 	echo
 	echo "1) List channels"
 	echo "2) Get a fresh channel list"
@@ -53,7 +59,7 @@ function check {
 	fi
 				
 
-	if [ ! -e `pwd`/channels.soma ]
+	if [ ! -e $dir/channels.soma ]
 	then
 		echo "[!] Channel list is not available."
 		echo "[+] Getting the channel list..."
@@ -69,7 +75,7 @@ function playChan {
 
 function getChan {
 	echo "[+] Getting a fresh channel list.."
-	curl https://somafm.com/listen/ 2> /dev/null | grep "<\!-- Channel: " | awk '{print $3}' > channels.soma 
+	curl https://somafm.com/listen/ 2> /dev/null | grep "<\!-- Channel: " | awk '{print $3}' > $dir/channels.soma 
 	banner
 	
 }
@@ -83,7 +89,7 @@ do
 	read  -p "----> " ans
 	case $ans in
 		1)
-			less channels.soma
+			less $dir/channels.soma
 			;;
 		2)
 			getChan
