@@ -95,7 +95,7 @@ do
 			getChan
 			;;
 		3)
-			read -p "[*] Eneter the channel name: " chan
+			read -p "[*] Enter the channel name: " chan
 			playChan $chan
 			;;
 		*)
